@@ -10,7 +10,7 @@ services:
         ports:
             - "5432:5432"
         volumes:
-            - digiyak_pgdata:/var/lib/postgresql/data
+            - digiyak_pgdata:/var/lib/postgresql
             - ./postgres/init-extensions.sql:/docker-entrypoint-initdb.d/01-init-extensions.sql:ro
         healthcheck:
             test:

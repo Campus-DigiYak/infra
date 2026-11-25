@@ -25,7 +25,7 @@ docker compose --env-file infra\.env -f infra\docker-compose.yml up -d
 docker compose --env-file infra\.env -f infra\docker-compose.yml ps
 ```
 
-The Compose file starts PostgreSQL 18 with PostGIS and Redis 8. Its health checks should report healthy before starting the API. The local `.env` file is ignored by Git; do not commit real credentials.
+The Compose file starts PostgreSQL 18 with PostGIS and Redis 8. For the PostgreSQL 18 image layout, its named data volume is mounted at `/var/lib/postgresql`. Its health checks should report healthy before starting the API. The local `.env` file is ignored by Git; do not commit real credentials.
 
 The same commands on macOS/Linux are:
 
@@ -45,6 +45,8 @@ Windows PowerShell:
 Set-Location backend
 .\gradlew.bat bootRun
 ```
+
+> **Note:** Gradle will show `> :bootRun` stuck at roughly 80% — this is normal. The web server runs indefinitely inside that Gradle task, so the progress bar never reaches 100%. Once you see `Started DigiyakApplication in …` in the log output, the API is ready. Press `Ctrl+C` to stop it.
 
 macOS/Linux:
 
