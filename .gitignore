@@ -4,23 +4,24 @@
 .env.*.local
 
 # Java / Gradle
-backend/.gradle/
-backend/build/
-backend/out/
+.gradle/
+build/
+out/
 *.class
 *.jar
-!backend/gradle/wrapper/gradle-wrapper.jar
+
+!gradle/wrapper/gradle-wrapper.jar
 *.war
 *.log
 hs_err_pid*
 
 # Node / Next.js
-frontend/node_modules/
-frontend/.next/
-frontend/out/
-frontend/coverage/
-frontend/.vercel/
-frontend/next-env.d.ts
+node_modules/
+.next/
+out/
+coverage/
+.vercel/
+next-env.d.ts
 *.tsbuildinfo
 npm-debug.log*
 pnpm-debug.log*
