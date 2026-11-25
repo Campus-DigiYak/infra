@@ -11,7 +11,7 @@ services:
             - "5432:5432"
         volumes:
             - digiyak_pgdata:/var/lib/postgresql/data
-            - ./infra/postgres/init-extensions.sql:/docker-entrypoint-initdb.d/01-init-extensions.sql:ro
+            - ./postgres/init-extensions.sql:/docker-entrypoint-initdb.d/01-init-extensions.sql:ro
         healthcheck:
             test:
                 [
